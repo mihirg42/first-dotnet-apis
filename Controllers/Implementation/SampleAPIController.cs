@@ -18,7 +18,13 @@ namespace WebApplication2.Controllers.Implementation
         public IActionResult AddEmployee([FromQuery] Models.Employee employee)
         {
             _service.AddEmployee(employee);
-            return Ok(employee);
+            var token = _service.GenerateToken(employee);
+
+            return Ok(new
+            {
+                Employee = employee,
+                Token = token
+            });
         }
 
         [HttpGet]

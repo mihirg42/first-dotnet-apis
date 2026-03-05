@@ -7,7 +7,7 @@ using System.Text;
 using WebApplication2.Repositories;
 using WebApplication2.Repositories.Implementation;
 using WebApplication2.Services;
-using WebApplication2.Services.Implementaton;
+using WebApplication2.Services.Implementation;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<ISamapleAPIRepository, SampleAPIRepository>();
+builder.Services.AddScoped<ISampleAPIRepository, SampleAPIRepository>();
 builder.Services.AddScoped<ISampleAPIService, SampleAPIService>();
 
 builder.Services.AddEndpointsApiExplorer();

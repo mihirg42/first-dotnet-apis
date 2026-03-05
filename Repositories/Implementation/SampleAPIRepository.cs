@@ -3,7 +3,7 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Repositories.Implementation
 {
-    public class SampleAPIRepository : ISamapleAPIRepository
+    public class SampleAPIRepository : ISampleAPIRepository
     {
         private static Dictionary<string, Employee> _employeeData = new Dictionary<string, Employee>();
 
@@ -13,8 +13,8 @@ namespace WebApplication2.Repositories.Implementation
         }
 
         public Dictionary<string, Employee> Get()
-        { 
-            return _employeeData; 
+        {
+            return _employeeData;
         }
 
         public Dictionary<string, Employee> Delete(string name)

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Models;
 using WebApplication2.Services;
+using Microsoft.AspNetCore.Authorization;
+
 namespace WebApplication2.Controllers.Implementation
 {
     [ApiController]
@@ -27,6 +29,7 @@ namespace WebApplication2.Controllers.Implementation
             });
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -34,6 +37,7 @@ namespace WebApplication2.Controllers.Implementation
             return Ok(employees);
         }
 
+        [Authorize]
         [HttpDelete]
         public IActionResult Delete([FromQuery] string name)
         {
@@ -42,6 +46,7 @@ namespace WebApplication2.Controllers.Implementation
             return Ok(employees);
         }
 
+        [Authorize]
         [HttpGet("search")]
         public IActionResult Search([FromQuery] string search)
         {
